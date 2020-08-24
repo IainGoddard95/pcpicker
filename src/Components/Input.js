@@ -2,14 +2,12 @@ import React from 'react';
 
 const Input = (props) => {
 
-const listOptions = props.options.map(x => <option key={Math.random()} value={x.name}>{x.name}</option>);
+const listOptions = props.options.map(x => <button key={x.name} onClick={() => props.selectionHandler(x)}>{x.name}</button>);
     
     return (
         <div>
-            <label>{props.name}</label>
-            <select>
+            <h1>{props.name}</h1>        
                 {listOptions}
-            </select>
         </div>
     );
 };
