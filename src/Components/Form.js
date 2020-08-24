@@ -1,14 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import Input from "./Input";
 
-class Form extends Component {
-  state = {
-    selection: [],
-  };
-
-  components = [
+const Form = (props) => {
+  const components = [
     {
-      name: "Cases",
+      name: "cases",
       options: [
         {
           name: "Corsair Carbide Series SPEC-05 Mid-Tower Gaming Case (ATX)",
@@ -27,7 +23,7 @@ class Form extends Component {
       ],
     },
     {
-      name: "Hard Drive(s)",
+      name: "hardDrive",
       options: [
         {
           name: "WD Caviar Blue 500GB",
@@ -98,7 +94,7 @@ class Form extends Component {
       ],
     },
     {
-      name: "Motherboard",
+      name: "motherboard",
       options: [
         {
           name: "ASUS ROG Strix B450 F-Gaming (AMD/ATX/AM4/DDR4)",
@@ -193,7 +189,7 @@ class Form extends Component {
       ],
     },
     {
-      name: "CPU",
+      name: "cpu",
       options: [
         {
           name: "AMD Ryzen 7 3700X (AM4/DDR4)",
@@ -270,7 +266,7 @@ class Form extends Component {
       ],
     },
     {
-      name: "RAM",
+      name: "ram",
       options: [
         {
           name: "Memory Warhawk RGB Aura Sync 2 x 16GB (DDR4)",
@@ -319,7 +315,7 @@ class Form extends Component {
       ],
     },
     {
-      name: "GPU",
+      name: "gpu",
       options: [
         {
           name: "Gigabyte Nvidia GeForce GTX 1050Ti",
@@ -374,7 +370,7 @@ class Form extends Component {
       ],
     },
     {
-      name: "PSU",
+      name: "psu",
       options: [
         {
           name: "Corsair VS450 450 W",
@@ -412,27 +408,16 @@ class Form extends Component {
     },
   ];
 
-  selectionHandler(option) {
-    console.log(option);
-  }
-
-  listCases = this.components.map((x) => (
+  let listCases = components.map((x) => (
     <Input
       key={x.name}
       name={x.name}
       options={x.options}
-      selectionHandler={this.selectionHandler.bind(this)}
+      selectionHandler={props.selectionHandler.bind(this)}
     />
   ));
 
-  render() {
-    return (
-      <div>
-        {this.listCases}
-        <h1>Testing</h1>
-      </div>
-    );
-  }
-}
+  return <div>{listCases}</div>;
+};
 
 export default Form;

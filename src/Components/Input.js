@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
 
 const Input = (props) => {
+  const listOptions = props.options.map((x) => (
+    <div key={x.name} onClick={() => props.selectionHandler(props.name, x)}>
+      {x.name}
+    </div>
+  ));
 
-const listOptions = props.options.map(x => <button key={x.name} onClick={() => props.selectionHandler(x)}>{x.name}</button>);
-    
-    return (
-        <div>
-            <h1>{props.name}</h1>        
-                {listOptions}
-        </div>
-    );
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      {listOptions}
+    </div>
+  );
 };
 
-
-export default Input
+export default Input;
