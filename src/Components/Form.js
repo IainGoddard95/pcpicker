@@ -1,11 +1,11 @@
 import React from "react";
-import Input from "./Input";
+import ItemList from "./ItemList";
 
 const Form = (props) => {
   const components = [
     {
-      name: "cases",
-      options: [
+      name: "case",
+      items: [
         {
           name: "Corsair Carbide Series SPEC-05 Mid-Tower Gaming Case (ATX)",
           formFactor: "ATX",
@@ -24,9 +24,9 @@ const Form = (props) => {
     },
     {
       name: "hardDrive",
-      options: [
+      items: [
         {
-          name: "WD Caviar Blue 500GB",
+          name: "WD Caviar Blue 500GB HDD",
           brand: "Western Digital",
           type: "HHD",
           formFactor: 3.5,
@@ -37,7 +37,7 @@ const Form = (props) => {
             "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B00461G3MS/ref=sr_1_8?dchild=1&keywords=HHD&qid=1597923174&sr=8-8&th=1",
         },
         {
-          name: "WD Caviar Blue 1TB",
+          name: "WD Caviar Blue 1TB HDD",
           brand: "Western Digital",
           type: "HHD",
           formFactor: 3.5,
@@ -48,7 +48,7 @@ const Form = (props) => {
             "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B013HNYVLA/ref=sr_1_8?dchild=1&keywords=HHD&qid=1597923174&sr=8-8&th=1",
         },
         {
-          name: "WD Caviar Blue 3TB",
+          name: "WD Caviar Blue 3TB HDD",
           brand: "Western Digital",
           type: "HHD",
           formFactor: 3.5,
@@ -59,7 +59,7 @@ const Form = (props) => {
             "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B07BBNJWGF/ref=sr_1_8?dchild=1&keywords=HHD&qid=1597923174&sr=8-8&th=1",
         },
         {
-          name: "Crucial BX500 240GB",
+          name: "Crucial BX500 240GB SSD",
           brand: "Crucial",
           type: "SSD",
           formFactor: 2.5,
@@ -70,7 +70,7 @@ const Form = (props) => {
             "https://www.amazon.co.uk/Crucial-CT240BX500SSD1Z-Internal-Solid-State/dp/B07G3KRZBX/ref=sxin_7_ac_d_rm?ac_md=0-0-c3Nk-ac_d_rm&cv_ct_cx=SSD&dchild=1&keywords=SSD&pd_rd_i=B07G3KRZBX&pd_rd_r=efbc0a72-9860-4cde-a2f4-e792dcbcea36&pd_rd_w=6MqwV&pd_rd_wg=9pgKY&pf_rd_p=17aec670-a34a-456d-b214-b9a882c785b0&pf_rd_r=PCHE0CYABKC8G8HRDC16&qid=1597923777&sr=1-1-fe323411-17bb-433b-b2f8-c44f2e1370d4&th=1",
         },
         {
-          name: "Crucial BX500 480GB",
+          name: "Crucial BX500 480GB SSD",
           brand: "Crucial",
           type: "SSD",
           formFactor: 2.5,
@@ -81,7 +81,7 @@ const Form = (props) => {
             "https://www.amazon.co.uk/Crucial-CT240BX500SSD1Z-Internal-Solid-State/dp/B07G3KRVWP/ref=sxin_7_ac_d_rm?ac_md=0-0-c3Nk-ac_d_rm&cv_ct_cx=SSD&dchild=1&keywords=SSD&pd_rd_i=B07G3KRZBX&pd_rd_r=efbc0a72-9860-4cde-a2f4-e792dcbcea36&pd_rd_w=6MqwV&pd_rd_wg=9pgKY&pf_rd_p=17aec670-a34a-456d-b214-b9a882c785b0&pf_rd_r=PCHE0CYABKC8G8HRDC16&qid=1597923777&sr=1-1-fe323411-17bb-433b-b2f8-c44f2e1370d4&th=1",
         },
         {
-          name: "Crucial BX500 1TB",
+          name: "Crucial BX500 1TB SSD",
           brand: "Crucial",
           type: "SSD",
           formFactor: 2.5,
@@ -95,12 +95,12 @@ const Form = (props) => {
     },
     {
       name: "motherboard",
-      options: [
+      items: [
         {
           name: "ASUS ROG Strix B450 F-Gaming (AMD/ATX/AM4/DDR4)",
           brand: "AMD",
           formFactor: "ATX",
-          socketType: "AM4",
+          cpuSocketType: "AM4",
           graphicsCardInterface: "PCI-E",
           wattage: 60,
           maxRam: 64,
@@ -115,7 +115,7 @@ const Form = (props) => {
           name: "MSI X570-A PRO  (AMD/ATX/AM4/DDR4)",
           brand: "AMD",
           formFactor: "ATX",
-          socketType: "AM4",
+          cpuSocketType: "AM4",
           graphicsCardInterface: "PCI-E",
           wattage: 80,
           maxRam: 12,
@@ -130,7 +130,7 @@ const Form = (props) => {
           name: "ASUS ROG Strix Z390-F Gaming  (Intel/Mini ATX/LGA1151/DDR4)",
           brand: "Intel",
           formFactor: "Mini ATX",
-          socketType: "LGA1151",
+          cpuSocketType: "LGA1151",
           graphicsCardInterface: "PCI-E",
           wattage: 60,
           maxRam: 64,
@@ -145,7 +145,7 @@ const Form = (props) => {
           name: "MSI MPG Z490 GAMING EDGE  (Intel/ATX/LGA1200/DDR4)",
           brand: "Intel",
           formFactor: "ATX",
-          socketType: "LGA1200",
+          cpuSocketType: "LGA1200",
           graphicsCardInterface: "PCI-E",
           wattage: 95,
           maxRam: 12,
@@ -160,7 +160,7 @@ const Form = (props) => {
           name: "Gigabyte B360N  (Intel/Mini ATX/LGA1150/DDR4)",
           brand: "Intel",
           formFactor: "Mini ATX",
-          socketType: "LGA1150",
+          cpuSocketType: "LGA1150",
           graphicsCardInterface: "PCI-Express 16",
           wattage: 50,
           maxRam: 16,
@@ -175,7 +175,7 @@ const Form = (props) => {
           name: "AMD A780/760G  (AMD/Mini ATX/AM2/DDR3)",
           brand: "AMD",
           formFactor: "Mini ATX",
-          socketType: "AM2",
+          cpuSocketType: "AM2",
           graphicsCardInterface: "PCI-E",
           wattage: 50,
           maxRam: 4,
@@ -190,7 +190,7 @@ const Form = (props) => {
     },
     {
       name: "cpu",
-      options: [
+      items: [
         {
           name: "AMD Ryzen 7 3700X (AM4/DDR4)",
           brand: "AMD",
@@ -267,7 +267,7 @@ const Form = (props) => {
     },
     {
       name: "ram",
-      options: [
+      items: [
         {
           name: "Memory Warhawk RGB Aura Sync 2 x 16GB (DDR4)",
           brand: "OLOy",
@@ -316,7 +316,7 @@ const Form = (props) => {
     },
     {
       name: "gpu",
-      options: [
+      items: [
         {
           name: "Gigabyte Nvidia GeForce GTX 1050Ti",
           brand: "Gigabyte",
@@ -371,7 +371,7 @@ const Form = (props) => {
     },
     {
       name: "psu",
-      options: [
+      items: [
         {
           name: "Corsair VS450 450 W",
           brand: "Corsair",
@@ -408,16 +408,17 @@ const Form = (props) => {
     },
   ];
 
-  let listCases = components.map((x) => (
-    <Input
+  let listItems = components.map((x) => (
+    <ItemList
       key={x.name}
       name={x.name}
-      options={x.options}
+      items={x.items}
+      currentSpecs={props.currentSpecs}
       selectionHandler={props.selectionHandler.bind(this)}
     />
   ));
 
-  return <div>{listCases}</div>;
+  return <div>{listItems}</div>;
 };
 
 export default Form;
