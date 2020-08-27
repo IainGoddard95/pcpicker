@@ -3,7 +3,7 @@ import "./App.css";
 import Form from "./Components/Form";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-//  1. Change specs based on selection
+//  1. Change specs based on selection **DONE**
 //  2. Clicking a 'selected' component removes it from selection state (and specs) 
 //  3. Conditional formatting for selected & disabled buttons
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,6 +36,11 @@ function App() {
     price: null,
   });
 
+  useEffect(() => {
+    console.log("current Selection", selection);
+    console.log("specs", specs);
+  });
+
   function setSpecsHandler(currentSelection) {
       // We can use the || logical operator. as long as 1 property returns a value, should be fine.
       //Search object.keys to research 'resetting' an objects values.
@@ -56,24 +61,26 @@ function App() {
       currentSpecs.maxWattage = currentSelection.psu.wattage;
       currentSpecs.wireless = currentSelection.motherboard.wireless;
       //currentSpecs.price;
-
+  
       setSpecs({...currentSpecs});
-
-      console.log(specs);
   };
 
   //We need to re-write the specs state everytime the selection state is updated.
   function selectionHandler(componentType, component) {
     const currentSelection = {...selection}
 
-    setSelection({...selection, [componentType]: component}); 
+    if(currentSelection[componentType].name === component.name) {
+      let obj = currentSelection[componentType];
+      Object.keys(obj).forEach(key => obj[key] = null);
+    } else {
+      console.log(false)
+      currentSelection[componentType] = component;
+    }
+
+    setSelection({...selection, ...currentSelection}); 
 
     setSpecsHandler(currentSelection);
   }
-
-  // useEffect(() => {
-  //   console.log(selection);
-  // })
 
   return (
     <div className="App">

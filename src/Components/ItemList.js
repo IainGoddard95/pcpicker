@@ -13,10 +13,10 @@ const ItemList = (props) => {
       case "cpu":
         if(item.cpuSocketType === currentSpecs.cpuSocketType || currentSpecs.cpuSocketType === null) {
            disabled = false;
-           console.log(disabled, item.cpuSocketType, currentSpecs.cpuSocketType);
+           
         } else {
            disabled = true;
-          console.log(disabled, item.cpuSocketType, currentSpecs.cpuSocketType);
+          
         }
         break;
     
