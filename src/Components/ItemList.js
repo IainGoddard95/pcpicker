@@ -10,15 +10,57 @@ const ItemList = (props) => {
     let disabled = false;
 
     switch(componentType) {
-      case "cpu":
-        if(item.cpuSocketType === currentSpecs.cpuSocketType || currentSpecs.cpuSocketType === null) {
-           disabled = false;
-           
+      case "case":
+        if(item.formFactor === currentSpecs.formFactor || currentSpecs.formFactor === null) {
+           disabled = false; 
         } else {
            disabled = true;
-          
         }
         break;
+      // case "hardDrive":
+      //   if(item.cpuSocketType === currentSpecs.cpuSocketType || currentSpecs.cpuSocketType === null) {
+      //       disabled = false; 
+      //   } else {
+      //       disabled = true;
+      //   }
+      //   break;
+      case "motherboard":
+        if((item.cpuSocketType === currentSpecs.cpuSocketType || currentSpecs.cpuSocketType === null) &&
+           (item.formFactor === currentSpecs.formFactor || currentSpecs.formFactor === null) &&
+           (item.graphicsCardInterface === currentSpecs.graphicsCardInterface || currentSpecs.graphicsCardInterface === null)) {
+            disabled = false; 
+        } else {
+            disabled = true;
+        }
+        break;    
+      case "cpu":
+        if(item.cpuSocketType === currentSpecs.cpuSocketType || currentSpecs.cpuSocketType === null) {
+           disabled = false; 
+        } else {
+           disabled = true;
+        }
+        break;
+      // case "ram":
+      //   if(item.cpuSocketType === currentSpecs.cpuSocketType || currentSpecs.cpuSocketType === null) {
+      //       disabled = false; 
+      //   } else {
+      //       disabled = true;
+      //   }
+      //   break;
+      case "gpu":
+        if(item.graphicsCardInterface === currentSpecs.graphicsCardInterface || currentSpecs.graphicsCardInterface === null) {
+            disabled = false; 
+        } else {
+            disabled = true;
+        }
+        break;
+      // case "psu":
+      //   if(item.cpuSocketType === currentSpecs.cpuSocketType || currentSpecs.cpuSocketType === null) {
+      //       disabled = false; 
+      //   } else {
+      //       disabled = true;
+      //   }
+      //   break;
     
    };
     

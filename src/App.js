@@ -33,8 +33,12 @@ function App() {
     totalWattage: null,
     maxWattage: null,
     wireless: null,
-    price: null,
+    totalPrice: null,
   });
+
+  const totalRam = 0;
+  const totalWattage = 0;
+  const totalPrice = 0;
 
   useEffect(() => {
     console.log("current Selection", selection);
@@ -52,26 +56,35 @@ function App() {
       //currentSpecs.totalDisks 
       currentSpecs.cpuSocketType = currentSelection.motherboard.cpuSocketType || currentSelection.cpu.cpuSocketType;
       currentSpecs.memoryType = currentSelection.ram.memoryType || currentSelection.motherboard.memoryType || currentSelection.cpu.memoryType;
-      currentSpecs.totalMemory = currentSelection.ram.memorySize;
+      currentSpecs.totalMemory = totalRam;
       currentSpecs.maxMemory = currentSelection.motherboard.maxMemory;
       //currentSpecs.totalRamSlots 
-      //currentSpecs.maxRamSlots ;
+      currentSpecs.maxRamSlots = currentSelection.motherboard.maxRamSlots;
       currentSpecs.graphicsCardInterface = currentSelection.gpu.graphicsCardInterface || currentSelection.motherboard.graphicsCardInterface;
-      //currentSpecs.totalWattage
+      currentSpecs.totalWattage = totalWattage;
       currentSpecs.maxWattage = currentSelection.psu.wattage;
       currentSpecs.wireless = currentSelection.motherboard.wireless;
-      //currentSpecs.price;
+      currentSpecs.totalPrice = totalPrice;
   
       setSpecs({...currentSpecs});
   };
+
+  function getTotal(key) {
+    //Need to think of a way to cycle through selection objects and picking the key.
+    //Add the totals of each component and return.
+    //What happens when the component doesn't have the attribute and returns undefined?
+  }
+
+  function resetObject(obj) {
+    Object.keys(obj).forEach(key => obj[key] = null);
+  }
 
   //We need to re-write the specs state everytime the selection state is updated.
   function selectionHandler(componentType, component) {
     const currentSelection = {...selection}
 
     if(currentSelection[componentType].name === component.name) {
-      let obj = currentSelection[componentType];
-      Object.keys(obj).forEach(key => obj[key] = null);
+      resetObject(currentSelection[componentType]);
     } else {
       console.log(false)
       currentSelection[componentType] = component;
