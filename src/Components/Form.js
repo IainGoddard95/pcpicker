@@ -161,7 +161,7 @@ const Form = (props) => {
           brand: "Intel",
           formFactor: "Mini ATX",
           cpuSocketType: "LGA1150",
-          graphicsCardInterface: "PCI-Express 16",
+          graphicsCardInterface: "PCI-Express x16",
           wattage: 50,
           maxMemory: 16,
           ramSlots: 4,
