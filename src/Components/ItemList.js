@@ -64,7 +64,7 @@ const ItemList = (props) => {
     
    };
     
-  return <Item key={item.name} componentType={props.name} item={item} disabled={disabled} selectionHandler={props.selectionHandler} />
+  return <Item key={item.name} componentType={props.name} item={item} disabled={disabled} configurationHandler={props.configurationHandler} />
         
 }
 

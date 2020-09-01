@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Form from "./Components/Form";
 
@@ -85,19 +85,12 @@ function App() {
     totalPrice: null,
   });
 
-  const totalRam = 0;
-  const totalWattage = 0;
-  const totalPrice = 0;
-
   useEffect(() => {
     console.log("current Selection", selection);
     console.log("specs", specs);
   });
 
-  function setSpecsHandler(currentSelection) {
-    // We can use the || logical operator. as long as 1 property returns a value, should be fine.
-    //Search object.keys to research 'resetting' an objects values.
-
+  function specsHandler(currentSelection) {
     const currentSpecs = { ...specs };
 
     currentSpecs.formFactor =
@@ -112,35 +105,33 @@ function App() {
       currentSelection.ram.memoryType ||
       currentSelection.motherboard.memoryType ||
       currentSelection.cpu.memoryType;
-    currentSpecs.totalMemory = totalRam;
+    currentSpecs.totalMemory = 0;
     currentSpecs.maxMemory = currentSelection.motherboard.maxMemory;
     //currentSpecs.totalRamSlots
     currentSpecs.maxRamSlots = currentSelection.motherboard.maxRamSlots;
     currentSpecs.graphicsCardInterface =
       currentSelection.gpu.graphicsCardInterface ||
       currentSelection.motherboard.graphicsCardInterface;
-    currentSpecs.totalWattage = totalWattage;
+    currentSpecs.totalWattage = 0;
     currentSpecs.maxWattage = currentSelection.psu.wattage;
     currentSpecs.wireless = currentSelection.motherboard.wireless;
-    currentSpecs.totalPrice = totalPrice;
+    currentSpecs.totalPrice = 0;
 
     setSpecs({ ...currentSpecs });
-  }
-
-  function totalHandler(operation, component) {
-    //Need to think of a way to cycle through selection objects and picking the key.
-    //Add the totals of each component and return.
-    //What happens when the component doesn't have the attribute and returns undefined?
   }
 
   function resetObject(obj) {
     Object.keys(obj).forEach((key) => (obj[key] = null));
   }
 
-  //We need to re-write the specs state everytime the selection state is updated.
-  function selectionHandler(componentType, component) {
+  function configurationHandler(componentType, component) {
     const currentSelection = { ...selection };
 
+    selectionHandler(componentType, component, currentSelection);
+    specsHandler(currentSelection, component);
+  }
+
+  function selectionHandler(componentType, component, currentSelection) {
     if (currentSelection[componentType].name === component.name) {
       resetObject(currentSelection[componentType]);
     } else {
@@ -149,14 +140,12 @@ function App() {
     }
 
     setSelection({ ...selection, ...currentSelection });
-
-    setSpecsHandler(currentSelection);
   }
 
   return (
     <div className="App">
       <Form
-        selectionHandler={selectionHandler.bind(this)}
+        configurationHandler={configurationHandler.bind(this)}
         currentSpecs={specs}
       />
     </div>
