@@ -90,7 +90,7 @@ function App() {
     console.log("specs", specs);
   });
 
-  function specsHandler(currentSelection) {
+  function specsHandler(operator, currentSelection, component) {
     const currentSpecs = { ...specs };
 
     currentSpecs.formFactor =
@@ -112,10 +112,16 @@ function App() {
     currentSpecs.graphicsCardInterface =
       currentSelection.gpu.graphicsCardInterface ||
       currentSelection.motherboard.graphicsCardInterface;
-    currentSpecs.totalWattage = 0;
-    currentSpecs.maxWattage = currentSelection.psu.wattage;
+    currentSpecs.maxWattage = currentSelection.psu.maxWattage;
     currentSpecs.wireless = currentSelection.motherboard.wireless;
-    currentSpecs.totalPrice = 0;
+
+    if (operator === "plus") {
+      currentSpecs.totalPrice += component.price;
+      currentSpecs.totalWattage += component.wattage;
+    } else if (operator === "sub") {
+      currentSpecs.totalPrice -= component.price;
+      currentSpecs.totalWattage -= component.wattage;
+    }
 
     setSpecs({ ...currentSpecs });
   }
@@ -124,28 +130,29 @@ function App() {
     Object.keys(obj).forEach((key) => (obj[key] = null));
   }
 
-  function configurationHandler(componentType, component) {
+  function selectionHandler(componentType, component) {
     const currentSelection = { ...selection };
 
-    selectionHandler(componentType, component, currentSelection);
-    specsHandler(currentSelection, component);
-  }
+    let operator = null;
 
-  function selectionHandler(componentType, component, currentSelection) {
     if (currentSelection[componentType].name === component.name) {
       resetObject(currentSelection[componentType]);
+      operator = "sub";
     } else {
       console.log(false);
       currentSelection[componentType] = component;
+      operator = "plus";
     }
 
     setSelection({ ...selection, ...currentSelection });
+
+    specsHandler(operator, currentSelection, component);
   }
 
   return (
     <div className="App">
       <Form
-        configurationHandler={configurationHandler.bind(this)}
+        selectionHandler={selectionHandler.bind(this)}
         currentSpecs={specs}
       />
     </div>

@@ -10,6 +10,7 @@ const Form = (props) => {
           name: "Corsair Carbide Series SPEC-05 Mid-Tower Gaming Case (ATX)",
           formFactor: "ATX",
           price: 50,
+          wattage: 10,
           url:
             "https://www.amazon.co.uk/Corsair-Carbide-SPEC-05-Mid-Tower-Chassis/dp/B07BH23K53/ref=sr_1_3?dchild=1&keywords=PC+case&qid=1597929310&sr=8-3",
         },
@@ -17,6 +18,7 @@ const Form = (props) => {
           name: "Corsair CC-9011086-WW Carbide Series 88R Windowed (Mini ATX)",
           formFactor: "Mini ATX",
           price: 48,
+          wattage: 10,
           url:
             "https://www.amazon.co.uk/Corsair-CC-9011086-WW-Windowed-Mini-ITX-Computer/dp/B01550Y9GA/ref=sr_1_6?dchild=1&keywords=PC%2Bcase%2Bmini%2Batx&qid=1597929386&sr=8-6&th=1",
         },
@@ -33,6 +35,7 @@ const Form = (props) => {
           hardwareInterface: "SATA",
           diskSpace: 500,
           price: 34,
+          wattage: 20,
           url:
             "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B00461G3MS/ref=sr_1_8?dchild=1&keywords=HHD&qid=1597923174&sr=8-8&th=1",
         },
@@ -44,6 +47,7 @@ const Form = (props) => {
           hardwareInterface: "SATA",
           diskSpace: 1000,
           price: 44,
+          wattage: 20,
           url:
             "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B013HNYVLA/ref=sr_1_8?dchild=1&keywords=HHD&qid=1597923174&sr=8-8&th=1",
         },
@@ -55,6 +59,7 @@ const Form = (props) => {
           hardwareInterface: "SATA",
           diskSpace: 3000,
           price: 105,
+          wattage: 20,
           url:
             "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B07BBNJWGF/ref=sr_1_8?dchild=1&keywords=HHD&qid=1597923174&sr=8-8&th=1",
         },
@@ -66,6 +71,7 @@ const Form = (props) => {
           hardwareInterface: "SATA",
           diskSpace: 240,
           price: 28,
+          wattage: 20,
           url:
             "https://www.amazon.co.uk/Crucial-CT240BX500SSD1Z-Internal-Solid-State/dp/B07G3KRZBX/ref=sxin_7_ac_d_rm?ac_md=0-0-c3Nk-ac_d_rm&cv_ct_cx=SSD&dchild=1&keywords=SSD&pd_rd_i=B07G3KRZBX&pd_rd_r=efbc0a72-9860-4cde-a2f4-e792dcbcea36&pd_rd_w=6MqwV&pd_rd_wg=9pgKY&pf_rd_p=17aec670-a34a-456d-b214-b9a882c785b0&pf_rd_r=PCHE0CYABKC8G8HRDC16&qid=1597923777&sr=1-1-fe323411-17bb-433b-b2f8-c44f2e1370d4&th=1",
         },
@@ -77,6 +83,7 @@ const Form = (props) => {
           hardwareInterface: "SATA",
           diskSpace: 480,
           price: 50,
+          wattage: 20,
           url:
             "https://www.amazon.co.uk/Crucial-CT240BX500SSD1Z-Internal-Solid-State/dp/B07G3KRVWP/ref=sxin_7_ac_d_rm?ac_md=0-0-c3Nk-ac_d_rm&cv_ct_cx=SSD&dchild=1&keywords=SSD&pd_rd_i=B07G3KRZBX&pd_rd_r=efbc0a72-9860-4cde-a2f4-e792dcbcea36&pd_rd_w=6MqwV&pd_rd_wg=9pgKY&pf_rd_p=17aec670-a34a-456d-b214-b9a882c785b0&pf_rd_r=PCHE0CYABKC8G8HRDC16&qid=1597923777&sr=1-1-fe323411-17bb-433b-b2f8-c44f2e1370d4&th=1",
         },
@@ -88,6 +95,7 @@ const Form = (props) => {
           hardwareInterface: "SATA",
           diskSpace: 1000,
           price: 117,
+          wattage: 20,
           url:
             "https://www.amazon.co.uk/Crucial-CT240BX500SSD1Z-Internal-Solid-State/dp/B07YD5KCB5/ref=sxin_7_ac_d_rm?ac_md=0-0-c3Nk-ac_d_rm&cv_ct_cx=SSD&dchild=1&keywords=SSD&pd_rd_i=B07G3KRZBX&pd_rd_r=efbc0a72-9860-4cde-a2f4-e792dcbcea36&pd_rd_w=6MqwV&pd_rd_wg=9pgKY&pf_rd_p=17aec670-a34a-456d-b214-b9a882c785b0&pf_rd_r=PCHE0CYABKC8G8HRDC16&qid=1597923777&sr=1-1-fe323411-17bb-433b-b2f8-c44f2e1370d4&th=1",
         },
@@ -375,7 +383,8 @@ const Form = (props) => {
         {
           name: "Corsair VS450 450 W",
           brand: "Corsair",
-          wattage: 450,
+          maxWattage: 450,
+          wattage: 0,
           price: 40,
           url:
             "https://www.amazon.co.uk/Corsair-VS450-Active-Certified-Supply/dp/B078Y44N73/ref=sr_1_6?dchild=1&keywords=PSU&qid=1598016549&sr=8-6",
@@ -383,7 +392,8 @@ const Form = (props) => {
         {
           name: "Corsair VS550 550 W",
           brand: "Corsair",
-          wattage: 550,
+          maxWattage: 550,
+          wattage: 0,
           price: 45,
           url:
             "https://www.amazon.co.uk/Corsair-VS550-Active-Certified-Supply/dp/B078XXNC3J/ref=sr_1_4?dchild=1&keywords=PSU&qid=1598016549&sr=8-4",
@@ -391,7 +401,8 @@ const Form = (props) => {
         {
           name: "Corsair RM850 650 W - Gold Certified",
           brand: "Corsair",
-          wattage: 650,
+          maxWattage: 650,
+          wattage: 0,
           price: 100,
           url:
             "https://www.amazon.co.uk/Corsair-RM650-Certified-Modular-Supply/dp/B07RYNFR8R/ref=sr_1_18?dchild=1&keywords=PSU&qid=1598016549&sr=8-18",
@@ -399,7 +410,8 @@ const Form = (props) => {
         {
           name: "Corsair RM850 850 W - Gold Certified",
           brand: "Corsair",
-          wattage: 850,
+          maxWattage: 850,
+          wattage: 0,
           price: 125,
           url:
             "https://www.amazon.co.uk/Corsair-RM850-Certified-Modular-Supply/dp/B07S2SXVR5/ref=sr_1_5?dchild=1&keywords=PSU&qid=1598016549&sr=8-5",
@@ -414,7 +426,7 @@ const Form = (props) => {
       name={x.name}
       items={x.items}
       currentSpecs={props.currentSpecs}
-      configurationHandler={props.configurationHandler.bind(this)}
+      selectionHandler={props.selectionHandler.bind(this)}
     />
   ));
 
