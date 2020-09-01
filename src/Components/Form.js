@@ -414,7 +414,7 @@ const Form = (props) => {
       name={x.name}
       items={x.items}
       currentSpecs={props.currentSpecs}
-      selectionHandler={props.selectionHandler.bind(this)}
+      configurationHandler={props.configurationHandler.bind(this)}
     />
   ));
 
