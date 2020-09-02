@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Form from "./Components/Form";
+import ItemBreakdownTable from "./Components/ItemBreakdownTable";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //  1. Change specs based on selection **DONE**
-//  2. Clicking a 'selected' component removes it from selection state (and specs)
+//  2. Clicking a 'selected' component removes it from selection state (and specs) **DONE**
 //  3. Conditional formatting for selected & disabled buttons
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65,7 +66,7 @@ function App() {
       price: null,
       url: null,
     },
-    psu: { name: null, brand: null, wattage: null, price: null, url: null },
+    psu: { name: null, brand: null, maxWattage: null, wattage: null, price: null, url: null },
   });
 
   const [specs, setSpecs] = useState({
@@ -155,6 +156,8 @@ function App() {
         selectionHandler={selectionHandler.bind(this)}
         currentSpecs={specs}
       />
+      <br />
+      <ItemBreakdownTable></ItemBreakdownTable>
     </div>
   );
 }

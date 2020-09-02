@@ -16,21 +16,28 @@ const ItemList = (props) => {
           disabled = true;
         }
         break;
-      // case "hardDrive":
-      //   if(item.cpuSocketType === currentSpecs.cpuSocketType || currentSpecs.cpuSocketType === null) {
-      //       disabled = false;
-      //   } else {
-      //       disabled = true;
-      //   }
-      //   break;
+      case "hardDrive":
+        if(
+          (item.cpuSocketType === currentSpecs.cpuSocketType || currentSpecs.cpuSocketType === null) 
+            &&
+          (currentSpecs.maxWattage >= currentSpecs.totalWattage + item.wattage || currentSpecs.maxWattage === null)
+          ){
+             disabled = false;
+         } else {
+             disabled = true;
+        }
+         break;
       case "motherboard":
         if (
-          (item.cpuSocketType === currentSpecs.cpuSocketType ||
-            currentSpecs.cpuSocketType === null) &&
-          (item.formFactor === currentSpecs.formFactor ||
-            currentSpecs.formFactor === null) &&
-          (item.graphicsCardInterface === currentSpecs.graphicsCardInterface ||
-            currentSpecs.graphicsCardInterface === null)
+          (item.cpuSocketType === currentSpecs.cpuSocketType || currentSpecs.cpuSocketType === null) 
+            &&
+          (item.formFactor === currentSpecs.formFactor || currentSpecs.formFactor === null) 
+            &&
+          (item.graphicsCardInterface === currentSpecs.graphicsCardInterface || currentSpecs.graphicsCardInterface === null)  
+            &&
+          (currentSpecs.maxWattage >= currentSpecs.totalWattage + item.wattage || currentSpecs.maxWattage === null)
+            &&
+          (item.memoryType === currentSpecs.memoryType || currentSpecs.memoryType === null)
         ) {
           disabled = false;
         } else {
@@ -39,8 +46,9 @@ const ItemList = (props) => {
         break;
       case "cpu":
         if (
-          item.cpuSocketType === currentSpecs.cpuSocketType ||
-          currentSpecs.cpuSocketType === null
+          (item.cpuSocketType === currentSpecs.cpuSocketType ||
+          currentSpecs.cpuSocketType === null)  &&
+          (currentSpecs.maxWattage >= currentSpecs.totalWattage + item.wattage || currentSpecs.maxWattage === null)
         ) {
           disabled = false;
         } else {
@@ -49,8 +57,9 @@ const ItemList = (props) => {
         break;
       case "ram":
         if (
-          item.memoryType === currentSpecs.memoryType ||
-          currentSpecs.memoryType === null
+          (item.memoryType === currentSpecs.memoryType ||
+          currentSpecs.memoryType === null)  &&
+          (currentSpecs.maxWattage >= currentSpecs.totalWattage + item.wattage || currentSpecs.maxWattage === null)
         ) {
           disabled = false;
         } else {
@@ -59,9 +68,9 @@ const ItemList = (props) => {
         break;
       case "gpu":
         if (
-          item.graphicsCardInterface === currentSpecs.graphicsCardInterface ||
-          currentSpecs.graphicsCardInterface === null ||
-          currentSpecs.maxWattage >= currentSpecs.totalWattage + item.wattage
+          (item.graphicsCardInterface === currentSpecs.graphicsCardInterface ||
+          currentSpecs.graphicsCardInterface === null) &&
+          (currentSpecs.maxWattage >= currentSpecs.totalWattage + item.wattage || currentSpecs.maxWattage === null)
         ) {
           disabled = false;
         } else {
