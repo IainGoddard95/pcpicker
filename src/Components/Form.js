@@ -35,7 +35,7 @@ const Form = (props) => {
           hardwareInterface: "SATA",
           diskSpace: 500,
           price: 34,
-          wattage: 20,
+          wattage: 10,
           url:
             "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B00461G3MS/ref=sr_1_8?dchild=1&keywords=HHD&qid=1597923174&sr=8-8&th=1",
         },
@@ -47,7 +47,7 @@ const Form = (props) => {
           hardwareInterface: "SATA",
           diskSpace: 1000,
           price: 44,
-          wattage: 20,
+          wattage: 10,
           url:
             "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B013HNYVLA/ref=sr_1_8?dchild=1&keywords=HHD&qid=1597923174&sr=8-8&th=1",
         },
@@ -59,7 +59,7 @@ const Form = (props) => {
           hardwareInterface: "SATA",
           diskSpace: 3000,
           price: 105,
-          wattage: 20,
+          wattage: 10,
           url:
             "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B07BBNJWGF/ref=sr_1_8?dchild=1&keywords=HHD&qid=1597923174&sr=8-8&th=1",
         },
@@ -71,7 +71,7 @@ const Form = (props) => {
           hardwareInterface: "SATA",
           diskSpace: 240,
           price: 28,
-          wattage: 20,
+          wattage: 10,
           url:
             "https://www.amazon.co.uk/Crucial-CT240BX500SSD1Z-Internal-Solid-State/dp/B07G3KRZBX/ref=sxin_7_ac_d_rm?ac_md=0-0-c3Nk-ac_d_rm&cv_ct_cx=SSD&dchild=1&keywords=SSD&pd_rd_i=B07G3KRZBX&pd_rd_r=efbc0a72-9860-4cde-a2f4-e792dcbcea36&pd_rd_w=6MqwV&pd_rd_wg=9pgKY&pf_rd_p=17aec670-a34a-456d-b214-b9a882c785b0&pf_rd_r=PCHE0CYABKC8G8HRDC16&qid=1597923777&sr=1-1-fe323411-17bb-433b-b2f8-c44f2e1370d4&th=1",
         },
@@ -83,7 +83,7 @@ const Form = (props) => {
           hardwareInterface: "SATA",
           diskSpace: 480,
           price: 50,
-          wattage: 20,
+          wattage: 10,
           url:
             "https://www.amazon.co.uk/Crucial-CT240BX500SSD1Z-Internal-Solid-State/dp/B07G3KRVWP/ref=sxin_7_ac_d_rm?ac_md=0-0-c3Nk-ac_d_rm&cv_ct_cx=SSD&dchild=1&keywords=SSD&pd_rd_i=B07G3KRZBX&pd_rd_r=efbc0a72-9860-4cde-a2f4-e792dcbcea36&pd_rd_w=6MqwV&pd_rd_wg=9pgKY&pf_rd_p=17aec670-a34a-456d-b214-b9a882c785b0&pf_rd_r=PCHE0CYABKC8G8HRDC16&qid=1597923777&sr=1-1-fe323411-17bb-433b-b2f8-c44f2e1370d4&th=1",
         },
@@ -95,7 +95,7 @@ const Form = (props) => {
           hardwareInterface: "SATA",
           diskSpace: 1000,
           price: 117,
-          wattage: 20,
+          wattage: 10,
           url:
             "https://www.amazon.co.uk/Crucial-CT240BX500SSD1Z-Internal-Solid-State/dp/B07YD5KCB5/ref=sxin_7_ac_d_rm?ac_md=0-0-c3Nk-ac_d_rm&cv_ct_cx=SSD&dchild=1&keywords=SSD&pd_rd_i=B07G3KRZBX&pd_rd_r=efbc0a72-9860-4cde-a2f4-e792dcbcea36&pd_rd_w=6MqwV&pd_rd_wg=9pgKY&pf_rd_p=17aec670-a34a-456d-b214-b9a882c785b0&pf_rd_r=PCHE0CYABKC8G8HRDC16&qid=1597923777&sr=1-1-fe323411-17bb-433b-b2f8-c44f2e1370d4&th=1",
         },
@@ -165,7 +165,7 @@ const Form = (props) => {
             "https://www.amazon.co.uk/MSI-Motherboard-Bluetooth-Lightning-DisplayPort/dp/B0886NPVRJ/ref=sr_1_1_sspa?crid=2N6IIMDXUFYVP&dchild=1&keywords=msi+motherboard&qid=1597927110&sprefix=MSi+mother%2Caps%2C168&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyNkI0UDJRTEtGOE5IJmVuY3J5cHRlZElkPUEwMzY3NTc3MjgxTU1XVVdLS1ZIQSZlbmNyeXB0ZWRBZElkPUEwNDEwMTcxMTBHWTk5R1c4MFlJVCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=",
         },
         {
-          name: "Gigabyte B360N  (Intel/Mini ATX/LGA1150/DDR4)",
+          name: "Gigabyte B360N  (Intel/Mini ATX/LGA1150/DDR3)",
           brand: "Intel",
           formFactor: "Mini ATX",
           cpuSocketType: "LGA1150",
@@ -173,7 +173,7 @@ const Form = (props) => {
           wattage: 50,
           maxMemory: 16,
           ramSlots: 4,
-          memoryType: "DDR4",
+          memoryType: "DDR3",
           wireless: true,
           price: 100,
           url:
@@ -426,6 +426,7 @@ const Form = (props) => {
       name={x.name}
       items={x.items}
       currentSpecs={props.currentSpecs}
+      currentSelection = {props.currentSelection}
       selectionHandler={props.selectionHandler.bind(this)}
     />
   ));

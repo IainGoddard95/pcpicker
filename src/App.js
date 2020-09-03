@@ -20,6 +20,7 @@ function App() {
       hardwareInterface: null,
       diskSpace: null,
       price: null,
+      wattage: null,
       url: null,
     },
     motherboard: {
@@ -136,6 +137,8 @@ function App() {
 
     let operator = null;
 
+    console.log("selection handler", currentSelection[componentType], component);
+
     if (currentSelection[componentType].name === component.name) {
       resetObject(currentSelection[componentType]);
       operator = "sub";
@@ -155,6 +158,7 @@ function App() {
       <Form
         selectionHandler={selectionHandler.bind(this)}
         currentSpecs={specs}
+        currentSelection={selection}
       />
       <br />
       <ItemBreakdownTable></ItemBreakdownTable>
