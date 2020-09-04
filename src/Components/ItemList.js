@@ -2,10 +2,11 @@ import React from "react";
 import Item from "./Item";
 
 const ItemList = (props) => {
-  function compatibilityCheck(currentSpecs, currentSelection, componentType, item) {
-    let disabled = true;
-    let selected = false;
+  let disabled = true;
+  let selected = false;
 
+  function compatibilityCheck(currentSpecs, currentSelection, componentType, item) {
+    console.log("item", item);
     switch (componentType) {
       case "case":
         if (
@@ -83,6 +84,21 @@ const ItemList = (props) => {
         }
         break;
     }
+  }
+
+  function checkIfSelected(currentSelection, item) {
+
+    for(let i = 0; currentSelection.length; i++) {
+      if(currentSelection[i].name === item.name) {
+        selected = true;
+      }
+    }
+  }
+
+  const listItems = props.items.map(item => {
+    //console.log("item", item);
+    compatibilityCheck(props.currentSpecs, props.currentSelection, props.name, item);
+    //checkIfSelected(props.currentSelection, item);
 
     return (
       <Item
@@ -90,13 +106,12 @@ const ItemList = (props) => {
         componentType={props.name}
         item={item}
         disabled={disabled}
+        selected={selected}
         selectionHandler={props.selectionHandler}
       />
     );
   }
-
-  const listItems = props.items.map((item) =>
-    compatibilityCheck(props.currentSpecs, props.currentSelection, props.name, item)
+    
   );
 
   return (
