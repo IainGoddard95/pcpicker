@@ -9,6 +9,10 @@ const Button = styled.button`
     ${props => props.disabled && css`
       background: #ccc;
     `}
+
+    ${props => props.selected && css`
+    background: #000;
+  `}
   `;
 
 const Item = (props) => {
@@ -22,6 +26,7 @@ const Item = (props) => {
     <Button
       onClick={selectHandler}
       disabled={props.disabled}
+      selected={props.selected}
     >
       {props.item.name}
     </Button>

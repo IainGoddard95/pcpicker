@@ -137,13 +137,10 @@ function App() {
 
     let operator = null;
 
-    console.log("selection handler", currentSelection[componentType], component);
-
     if (currentSelection[componentType].name === component.name) {
       resetObject(currentSelection[componentType]);
       operator = "sub";
     } else {
-      console.log(false);
       currentSelection[componentType] = component;
       operator = "plus";
     }
