@@ -3,12 +3,6 @@ import "./App.css";
 import Form from "./Components/Form";
 import ItemBreakdownTable from "./Components/ItemBreakdownTable";
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
-//  1. Change specs based on selection **DONE**
-//  2. Clicking a 'selected' component removes it from selection state (and specs) **DONE**
-//  3. Conditional formatting for selected & disabled buttons
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
 function App() {
   const [selection, setSelection] = useState({
     case: { name: null, formFactor: null, price: null, url: null },
@@ -87,9 +81,13 @@ function App() {
     totalPrice: null,
   });
 
+  const [lastSelected, setLastSelected] = useState(null);
+
   useEffect(() => {
     console.log("current Selection", selection);
     console.log("specs", specs);
+    //console.log(lastSelected);
+    console.log("Last selected", selection[lastSelected]);
   });
 
   function specsHandler(operator, currentSelection, component) {
@@ -99,7 +97,6 @@ function App() {
       currentSelection.case.formFactor ||
       currentSelection.motherboard.formFactor;
     currentSpecs.diskSpace = currentSelection.hardDrive.diskSpace;
-    //currentSpecs.totalDisks
     currentSpecs.cpuSocketType =
       currentSelection.motherboard.cpuSocketType ||
       currentSelection.cpu.cpuSocketType;
@@ -109,7 +106,6 @@ function App() {
       currentSelection.cpu.memoryType;
     currentSpecs.totalMemory = 0;
     currentSpecs.maxMemory = currentSelection.motherboard.maxMemory;
-    //currentSpecs.totalRamSlots
     currentSpecs.maxRamSlots = currentSelection.motherboard.maxRamSlots;
     currentSpecs.graphicsCardInterface =
       currentSelection.gpu.graphicsCardInterface ||
@@ -148,6 +144,8 @@ function App() {
     setSelection({ ...selection, ...currentSelection });
 
     specsHandler(operator, currentSelection, component);
+
+    setLastSelected(componentType);
   }
 
   return (
@@ -158,7 +156,7 @@ function App() {
         currentSelection={selection}
       />
       <br />
-      <ItemBreakdownTable></ItemBreakdownTable>
+      <ItemBreakdownTable item={selection[lastSelected]}></ItemBreakdownTable>
     </div>
   );
 }

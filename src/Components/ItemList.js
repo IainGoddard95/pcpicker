@@ -113,16 +113,6 @@ const ItemList = (props) => {
     }
   }
 
-  function checkIfSelected(currentSelection, item) {
-    for(let i = 0; currentSelection.length; i++) {
-      console.log (currentSelection[i].name, item.name);
-      console.log("TESTING");
-      if(currentSelection[i].name === item.name) {
-        selected = true;
-      }
-    }
-  }
-
   const listItems = props.items.map(item => {
     compatibilityCheck(props.currentSpecs, props.currentSelection, props.name, item);
     if(props.currentSelection[props.name].name === item.name) {
