@@ -61,7 +61,14 @@ function App() {
       price: null,
       url: null,
     },
-    psu: { name: null, brand: null, maxWattage: null, wattage: null, price: null, url: null },
+    psu: {
+      name: null,
+      brand: null,
+      maxWattage: null,
+      wattage: null,
+      price: null,
+      url: null,
+    },
   });
 
   const [specs, setSpecs] = useState({
@@ -146,19 +153,23 @@ function App() {
     setSelection({ ...selection, ...currentSelection });
 
     specsHandler(operator, currentSelection, component);
-
-    //setLastSelected(componentType);
   }
 
   return (
     <div className="App">
-      <Form
-        selectionHandler={selectionHandler.bind(this)}
-        currentSpecs={specs}
-        currentSelection={selection}
-      />
-      <br />
-      <ItemBreakdownTable item={selection[lastSelected]}></ItemBreakdownTable>
+      <div>
+        <Form
+          selectionHandler={selectionHandler.bind(this)}
+          currentSpecs={specs}
+          currentSelection={selection}
+        />
+      </div>
+      <div>
+        <ItemBreakdownTable item={selection[lastSelected]} />
+      </div>
+      <div>
+        <ItemBreakdownTable item={selection[lastSelected]} />
+      </div>
     </div>
   );
 }
