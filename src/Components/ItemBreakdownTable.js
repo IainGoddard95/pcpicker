@@ -1,26 +1,19 @@
 import React from "react";
+import ItemDetailLine from './ItemDetailLine';
 
 const ItemBreakdownTable = (props) => {
 
-  // const listItemProperties = item ?
-  //   item.map(key => {return(
-  //     <p>{key}</p>
-  //   )}) : null
-
-  function listItemProperties(obj) {
-    Object.keys(obj).map((item, i) => {
-      return(
-      //console.log("listItemBreakdown ", item, i)
-      <p>{item}</p>
-      )
-    })
-  };
+  const listItemProperties = props.item ? Object.entries(props.item).map(([label, value]) => {
+        return(
+          <ItemDetailLine label={label} value={value}/>
+        );
+  }) : "null";
+  
 
   return (
     <div>
       <h1>INFO TABLE</h1>
-      {/* {props.item ? listItemProperties(props.item) : "Click on an item to see more details"} */}
-      {listItemProperties(props.item)}
+      {props.item ? listItemProperties : "Click on an item to view some more details!"}
     </div>
   );
 };

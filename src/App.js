@@ -135,9 +135,11 @@ function App() {
 
     if (currentSelection[componentType].name === component.name) {
       resetObject(currentSelection[componentType]);
+      setLastSelected(null);
       operator = "sub";
     } else {
       currentSelection[componentType] = component;
+      setLastSelected(componentType);
       operator = "plus";
     }
 
@@ -145,7 +147,7 @@ function App() {
 
     specsHandler(operator, currentSelection, component);
 
-    setLastSelected(componentType);
+    //setLastSelected(componentType);
   }
 
   return (
