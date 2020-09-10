@@ -114,7 +114,7 @@ const Form = (props) => {
           maxMemory: 64,
           ramSlots: 4,
           memoryType: "DDR4",
-          wireless: true,
+          wireless: "true",
           price: 109,
           url:
             "https://www.amazon.co.uk/ASUS-B450-F-GAMING-Socket-Motherboard/dp/B07F714FT7/ref=sr_1_2?dchild=1&keywords=amd+motherboard&qid=1597915568&sr=8-2",
@@ -129,7 +129,7 @@ const Form = (props) => {
           maxMemory: 12,
           ramSlots: 48,
           memoryType: "DDR4",
-          wireless: false,
+          wireless: "false",
           price: 175,
           url:
             "https://www.amazon.co.uk/MSI-X570-PRO-Motherboard-Type-C/dp/B07TDST84Q/ref=psdc_430512031_t2_B07F714FT7",
@@ -144,7 +144,7 @@ const Form = (props) => {
           maxMemory: 64,
           ramSlots: 4,
           memoryType: "DDR4",
-          wireless: true,
+          wireless: "true",
           price: 120,
           url:
             "https://www.amazon.co.uk/ASUS-Z390-F-LGA1151-Gigabit-Motherboard/dp/B07HS7C8B8/ref=sr_1_11?dchild=1&keywords=intel+motherboard&qid=1597926698&sr=8-11",
@@ -159,7 +159,7 @@ const Form = (props) => {
           maxMemory: 12,
           ramSlots: 48,
           memoryType: "DDR4",
-          wireless: true,
+          wireless: "true",
           price: 194,
           url:
             "https://www.amazon.co.uk/MSI-Motherboard-Bluetooth-Lightning-DisplayPort/dp/B0886NPVRJ/ref=sr_1_1_sspa?crid=2N6IIMDXUFYVP&dchild=1&keywords=msi+motherboard&qid=1597927110&sprefix=MSi+mother%2Caps%2C168&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyNkI0UDJRTEtGOE5IJmVuY3J5cHRlZElkPUEwMzY3NTc3MjgxTU1XVVdLS1ZIQSZlbmNyeXB0ZWRBZElkPUEwNDEwMTcxMTBHWTk5R1c4MFlJVCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=",
@@ -174,7 +174,7 @@ const Form = (props) => {
           maxMemory: 16,
           ramSlots: 4,
           memoryType: "DDR3",
-          wireless: true,
+          wireless: "true",
           price: 100,
           url:
             "https://www.amazon.co.uk/Gigabyte-B360N-WIFI-Socket-Express/dp/B07BKJQB6W/ref=sr_1_2?dchild=1&keywords=mini+atx&qid=1597929052&sr=8-2",
@@ -189,7 +189,7 @@ const Form = (props) => {
           maxMemory: 4,
           ramSlots: 2,
           memoryType: "DDR3",
-          wireless: false,
+          wireless: "false",
           price: 49,
           url:
             "https://www.amazon.co.uk/ASUS-B450-F-GAMING-Socket-Motherboard/dp/B07F714FT7/ref=sr_1_2?dchild=1&keywords=amd+motherboard&qid=1597915568&sr=8-2",

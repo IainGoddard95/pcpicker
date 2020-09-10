@@ -157,17 +157,17 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+      <div className="Form">
         <Form
           selectionHandler={selectionHandler.bind(this)}
           currentSpecs={specs}
           currentSelection={selection}
         />
       </div>
-      <div>
+      <div className="BreakdownTable">
         <ItemBreakdownTable item={selection[lastSelected]} />
       </div>
-      <div>
+      <div className="BreakdownTable2">
         <ItemBreakdownTable item={selection[lastSelected]} />
       </div>
     </div>

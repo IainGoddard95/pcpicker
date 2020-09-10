@@ -1,11 +1,12 @@
 import React from "react";
-import ItemDetailLine from './ItemDetailLine';
+import ItemDetailText from './ItemDetailText';
+import ItemDetailBuyLink from './ItemDetailBuyLink';
 
 const ItemBreakdownTable = (props) => {
 
   const listItemProperties = props.item ? Object.entries(props.item).map(([label, value]) => {
         return(
-          <ItemDetailLine label={label} value={value}/>
+          (label !== "url" ? <ItemDetailText label={label} value={value} /> : <ItemDetailBuyLink url={value} /> )
         );
   }) : "null";
   

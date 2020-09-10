@@ -1,6 +1,6 @@
 import React from "react";
 
-const ItemDetailLine = (props) => {
+const ItemDetailText = (props) => {
 
   return (
     <div>
@@ -9,4 +9,4 @@ const ItemDetailLine = (props) => {
   );
 };
 
-export default ItemDetailLine;
+export default ItemDetailText;
