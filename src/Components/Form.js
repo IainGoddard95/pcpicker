@@ -299,12 +299,23 @@ const Form = (props) => {
             "https://www.amazon.co.uk/HyperX-Fury-HX432C16FB3-16-Black/dp/B07WCQRMWQ/ref=sr_1_10?dchild=1&keywords=RAM+DDR4&qid=1598000773&sr=8-10",
         },
         {
+          name: "LEVEN SINBA 8GB Kit 2 x 4GB (DDR4)",
+          brand: "LEVEN",
+          memorySize: 8,
+          memoryType: "DDR4",
+          sticks: 2,
+          wattage: 125,
+          price: 33,
+          url:
+            "https://www.amazon.co.uk/LEVEN-3000MHz-PC4-24000-U-DIMM-Desktop/dp/B08DFX66RK/ref=sr_1_6_sspa?c=ts&dchild=1&keywords=Computer+Memory&qid=1599818654&refinements=p_n_style_browse-bin%3A11416345031&sr=8-6-spons&ts_id=430511031&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUE0SDg1QUdXV1RBQUgmZW5jcnlwdGVkSWQ9QTA1MzUyNTEyREpCRzNVRlJVRTdPJmVuY3J5cHRlZEFkSWQ9QTA0NzgzMzUyV1FDMUlSSURXNUpMJndpZGdldE5hbWU9c3BfbXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==",
+        },
+        {
           name: "Corsair Vengeance 2 x 8GB (DDR4)",
           brand: "Corsair",
           memorySize: 16,
           memoryType: "DDR4",
           sticks: 2,
-          wattage: 125,
+          wattage: 100,
           price: 68,
           url:
             "https://www.amazon.co.uk/Corsair-CMK16GX4M2B3200C16-Vengeance-Performance-Desktop/dp/B0143UM4TC/ref=psdc_430511031_t1_B07WCQRMWQ",

@@ -8,7 +8,7 @@ const ItemBreakdownTable = (props) => {
         return(
           (label !== "url" ? <ItemDetailText label={label} value={value} /> : <ItemDetailBuyLink url={value} /> )
         );
-  }) : "null";
+  }) : null;
   
 
   return (

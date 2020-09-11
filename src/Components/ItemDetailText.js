@@ -4,7 +4,8 @@ const ItemDetailText = (props) => {
 
   return (
     <div>
-        <p>{props.label}: {props.value}</p>
+        <p>{(props.label.toUpperCase())}: {props.value}</p>
+        
     </div>
   );
 };

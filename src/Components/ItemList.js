@@ -74,6 +74,8 @@ const ItemList = (props) => {
             &&
           (item.name === currentSelection.ram.name || currentSelection.ram.name === null)
             &&
+          (item.memorySize <= currentSpecs.maxMemory || currentSpecs.maxMemory === null)
+            &&
           (currentSpecs.maxWattage >= currentSpecs.totalWattage - currentSelection[componentType].wattage + item.wattage || currentSpecs.maxWattage === null))
             || 
           item.name === currentSelection[componentType].name
@@ -138,7 +140,7 @@ const ItemList = (props) => {
 
   return (
     <div>
-      <h1>{props.name}</h1>
+      <h1>{props.name.toUpperCase()}</h1>
       {listItems}
     </div>
   );

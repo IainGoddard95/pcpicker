@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Form from "./Components/Form";
 import ItemBreakdownTable from "./Components/ItemBreakdownTable";
+import SpecsOverallTable from "./Components/SpecsOverallTable";
 
 function App() {
   const [selection, setSelection] = useState({
@@ -74,13 +75,12 @@ function App() {
   const [specs, setSpecs] = useState({
     formFactor: null,
     diskSpace: null,
-    totalDisks: null,
     cpuSocketType: null,
+    processorSpeed: null,
+    cpuCores: null,
     memoryType: null,
     totalMemory: null,
     maxMemory: null,
-    totalRamSlots: null,
-    maxRamSlots: null,
     graphicsCardInterface: null,
     totalWattage: null,
     maxWattage: null,
@@ -93,7 +93,6 @@ function App() {
   useEffect(() => {
     console.log("current Selection", selection);
     console.log("specs", specs);
-    //console.log(lastSelected);
     console.log("Last selected", selection[lastSelected]);
   });
 
@@ -107,13 +106,14 @@ function App() {
     currentSpecs.cpuSocketType =
       currentSelection.motherboard.cpuSocketType ||
       currentSelection.cpu.cpuSocketType;
+    currentSpecs.processorSpeed = currentSelection.cpu.processorSpeed;
+    currentSpecs.cpuCores = currentSelection.cpu.cores;
     currentSpecs.memoryType =
       currentSelection.ram.memoryType ||
       currentSelection.motherboard.memoryType ||
       currentSelection.cpu.memoryType;
-    currentSpecs.totalMemory = 0;
+    currentSpecs.totalMemory = currentSelection.ram.memorySize;
     currentSpecs.maxMemory = currentSelection.motherboard.maxMemory;
-    currentSpecs.maxRamSlots = currentSelection.motherboard.maxRamSlots;
     currentSpecs.graphicsCardInterface =
       currentSelection.gpu.graphicsCardInterface ||
       currentSelection.motherboard.graphicsCardInterface;
@@ -167,8 +167,8 @@ function App() {
       <div className="BreakdownTable">
         <ItemBreakdownTable item={selection[lastSelected]} />
       </div>
-      <div className="BreakdownTable2">
-        <ItemBreakdownTable item={selection[lastSelected]} />
+      <div className="SpecsOverallTable">
+        <SpecsOverallTable specs={specs} />
       </div>
     </div>
   );
