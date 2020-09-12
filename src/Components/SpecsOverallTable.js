@@ -1,12 +1,13 @@
 import React from "react";
-import ItemDetailText from './ItemDetailText';
+import ItemDetailText from "./ItemDetailText";
 
 const SpecsOverallTable = (props) => {
+  let alt = false;
 
-    const listSpecs =
-        Object.entries(props.specs).map(([key, value]) => { 
-            return( <ItemDetailText label={key} value={value}/> )
-        });
+  const listSpecs = Object.entries(props.specs).map(([key, value]) => {
+    alt = !alt;
+    return <ItemDetailText alt={alt ? "alt" : ""} label={key} value={value} />;
+  });
 
   return (
     <div>

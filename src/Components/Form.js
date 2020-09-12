@@ -30,34 +30,34 @@ const Form = (props) => {
         {
           name: "WD Caviar Blue 500GB HDD",
           brand: "Western Digital",
-          type: "HHD",
+          type: "HDD",
           size: 3.5,
           hardwareInterface: "SATA",
-          diskSpace: 500,
+          diskSpace: "500GB",
           price: 34,
           wattage: 10,
           url:
-            "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B00461G3MS/ref=sr_1_8?dchild=1&keywords=HHD&qid=1597923174&sr=8-8&th=1",
+            "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B00461G3MS/ref=sr_1_8?dchild=1&keywords=HDD&qid=1597923174&sr=8-8&th=1",
         },
         {
           name: "WD Caviar Blue 1TB HDD",
           brand: "Western Digital",
-          type: "HHD",
+          type: "HDD",
           size: 3.5,
           hardwareInterface: "SATA",
-          diskSpace: 1000,
+          diskSpace: "1TB",
           price: 44,
           wattage: 10,
           url:
-            "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B013HNYVLA/ref=sr_1_8?dchild=1&keywords=HHD&qid=1597923174&sr=8-8&th=1",
+            "https://www.amazon.co.uk/Caviar-500GB-SATAIII-Cache-Internal/dp/B013HNYVLA/ref=sr_1_8?dchild=1&keywords=HDD&qid=1597923174&sr=8-8&th=1",
         },
         {
           name: "WD Caviar Blue 3TB HDD",
           brand: "Western Digital",
-          type: "HHD",
+          type: "HDD",
           size: 3.5,
           hardwareInterface: "SATA",
-          diskSpace: 3000,
+          diskSpace: "3TB",
           price: 105,
           wattage: 10,
           url:
@@ -69,7 +69,7 @@ const Form = (props) => {
           type: "SSD",
           size: 2.5,
           hardwareInterface: "SATA",
-          diskSpace: 240,
+          diskSpace: "240GB",
           price: 28,
           wattage: 10,
           url:
@@ -81,7 +81,7 @@ const Form = (props) => {
           type: "SSD",
           size: 2.5,
           hardwareInterface: "SATA",
-          diskSpace: 480,
+          diskSpace: "480GB",
           price: 50,
           wattage: 10,
           url:
@@ -93,7 +93,7 @@ const Form = (props) => {
           type: "SSD",
           size: 2.5,
           hardwareInterface: "SATA",
-          diskSpace: 1000,
+          diskSpace: "1TB",
           price: 117,
           wattage: 10,
           url:
@@ -437,7 +437,7 @@ const Form = (props) => {
       name={x.name}
       items={x.items}
       currentSpecs={props.currentSpecs}
-      currentSelection = {props.currentSelection}
+      currentSelection={props.currentSelection}
       selectionHandler={props.selectionHandler.bind(this)}
     />
   ));

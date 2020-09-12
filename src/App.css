@@ -1,14 +1,37 @@
 .App {
-  text-align: center;
   display: grid;
-  padding: 10px;
+  padding: 0 30px;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto auto ;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 25px;
 }
 
 .Form {
   grid-column: 1;
   grid-row: 1 / 4;
+}
+
+h1 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 10px 10px 5px 0;
+}
+
+.breakdown-line-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.alt {
+  background-color: #eee;
+}
+
+span {
+  margin: 5px 0;
+}
+
+.Component-List {
+  margin-bottom: 20px;
 }
 
 .BreakdownTable {

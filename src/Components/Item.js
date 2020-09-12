@@ -1,32 +1,34 @@
 import React from "react";
-import styled, {css} from 'styled-components';
+import styled, { css } from "styled-components";
 
 const Button = styled.button`
-    border: 0;
-    padding: 5px;
-    margin: 5px;
-    background:  white;
-    border: 1px solid black;
-    outline: none;
+  border: 0;
+  padding: 5px;
+  margin: 5px 10px 5px 0;
+  background: white;
+  border: 1px solid black;
+  outline: none;
 
-  ${props => props.disabled && css`
-    background: #eee;
-    border: 1px solid transparent;
-  `}
+  ${(props) =>
+    props.disabled &&
+    css`
+      background: #eee;
+      border: 1px solid transparent;
+    `}
 
-  ${props => props.selected && css`
-    border: 1px solid green;
-    background: rgb(232, 255, 224);
+  ${(props) =>
+    props.selected &&
+    css`
+      border: 1px solid green;
+      background: rgb(232, 255, 224);
 
-    &:hover {
-      background: rgb(250, 204, 202);
-    }
-`}
-`
+      &:hover {
+        background: rgb(250, 204, 202);
+      }
+    `}
+`;
 
 const Item = (props) => {
-  
-
   function selectHandler() {
     props.selectionHandler(props.componentType, props.item);
   }
