@@ -4,6 +4,14 @@ import Form from "./Components/Form";
 import ItemBreakdownTable from "./Components/ItemBreakdownTable";
 import SpecsOverallTable from "./Components/SpecsOverallTable";
 
+///////////////////////////////////////////////////////////////////
+///   1) Add reset selection button
+///   2) Add info button
+///        Quick bio of app. Time to dev, tech used etc.
+///   3) Maybe a summary button?
+///        Same as info, but shows finished selection
+///////////////////////////////////////////////////////////////////
+
 function App() {
   const [selection, setSelection] = useState({
     case: { name: null, formFactor: null, price: null, url: null },
@@ -131,6 +139,15 @@ function App() {
     setSpecs({ ...currentSpecs });
   }
 
+  function resetSelection() {
+    let tempSelection = {...selection};
+    let tempSpecs = {...specs};
+    Object.values(tempSelection).forEach((value) => resetObject(value));
+    resetObject(tempSpecs);
+    setSelection({...tempSelection});
+    setSpecs({...tempSpecs});
+  }
+
   function resetObject(obj) {
     Object.keys(obj).forEach((key) => (obj[key] = null));
   }
@@ -162,6 +179,7 @@ function App() {
           selectionHandler={selectionHandler.bind(this)}
           currentSpecs={specs}
           currentSelection={selection}
+          resetObject={resetSelection}
         />
       </div>
       <div className="BreakdownTable">

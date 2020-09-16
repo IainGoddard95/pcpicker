@@ -2,13 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const Button = styled.button`
-  border: 0;
-  padding: 5px;
-  margin: 5px 10px 5px 0;
-  background: white;
-  border: 1px solid black;
-  outline: none;
-
   ${(props) =>
     props.disabled &&
     css`

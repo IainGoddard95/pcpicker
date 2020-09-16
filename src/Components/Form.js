@@ -442,7 +442,11 @@ const Form = (props) => {
     />
   ));
 
-  return <div>{listItems}</div>;
-};
+  return (
+  <div>
+    {listItems}
+    <button onClick={() => props.resetObject(props.currentSelection)} >Reset</button>
+  </div>
+)};
 
 export default Form;
