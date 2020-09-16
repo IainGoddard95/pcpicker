@@ -5,11 +5,10 @@ import ItemBreakdownTable from "./Components/ItemBreakdownTable";
 import SpecsOverallTable from "./Components/SpecsOverallTable";
 
 ///////////////////////////////////////////////////////////////////
-///   1) Add reset selection button
+///
 ///   2) Add info button
 ///        Quick bio of app. Time to dev, tech used etc.
-///   3) Maybe a summary button?
-///        Same as info, but shows finished selection
+///   3) Move items to Firebase solution
 ///////////////////////////////////////////////////////////////////
 
 function App() {
