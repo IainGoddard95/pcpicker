@@ -445,7 +445,7 @@ const Form = (props) => {
   return (
   <div>
     {listItems}
-    <button onClick={() => props.resetObject(props.currentSelection)} >Reset</button>
+    <button onClick={() => props.resetObject(props.currentSelection)} >Reset Selection</button>
   </div>
 )};
 

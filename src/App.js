@@ -141,10 +141,13 @@ function App() {
   function resetSelection() {
     let tempSelection = {...selection};
     let tempSpecs = {...specs};
+    let tempLastSelected = {...lastSelected};
     Object.values(tempSelection).forEach((value) => resetObject(value));
     resetObject(tempSpecs);
+    resetObject(tempLastSelected);
     setSelection({...tempSelection});
     setSpecs({...tempSpecs});
+    setLastSelected({...lastSelected});
   }
 
   function resetObject(obj) {
