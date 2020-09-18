@@ -72,6 +72,8 @@ const ItemList = (props) => {
             currentSpecs.cpuSocketType === null) &&
             (item.name === currentSelection.cpu.name ||
               currentSelection.cpu.name === null) &&
+            (item.memoryType === currentSpecs.memoryType ||
+              currentSpecs.memoryType === null) &&
             (currentSpecs.maxWattage >=
               currentSpecs.totalWattage -
                 currentSelection[componentType].wattage +

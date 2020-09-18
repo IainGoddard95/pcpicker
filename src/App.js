@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { ModalProvider } from 'styled-react-modal';
+import Modal from 'styled-react-modal';
 import "./App.css";
 import Form from "./Components/Form";
 import ItemBreakdownTable from "./Components/ItemBreakdownTable";
@@ -173,9 +175,41 @@ function App() {
 
     specsHandler(operator, currentSelection, component);
   }
+ 
+function FancyModalButton() {
+  const [isOpen, setIsOpen] = useState(false)
+ 
+  function toggleModal(e) {
+    setIsOpen(!isOpen)
+  }
+    return (
+      <div>
+        <button onClick={toggleModal}>Click me</button>
+        <Modal
+          isOpen={isOpen}
+          onBackgroundClick={toggleModal}
+          onEscapeKeydown={toggleModal}>
+            <div className="modalbox">
+              <h1>PC Picker</h1>
+              <h2>React</h2>
+              <h2>Firebase</h2>
+              <h3>Time to complete: 60 Hours</h3>
+              <p>Write something about the app. Write something about the app. Write something about the app. Write something about the app. Write something about the app.</p>
+              <span onClick={toggleModal} className="close-button">x</span>
+            </div>
+        </Modal>
+      </div>
+    )
+}
+
 
   return (
     <div className="App">
+
+      <ModalProvider>
+        <FancyModalButton />
+      </ModalProvider>
+
       <div className="Form">
         <Form
           selectionHandler={selectionHandler.bind(this)}
@@ -184,12 +218,15 @@ function App() {
           resetObject={resetSelection}
         />
       </div>
+
       <div className="BreakdownTable">
         <ItemBreakdownTable item={selection[lastSelected]} />
       </div>
+
       <div className="SpecsOverallTable">
         <SpecsOverallTable specs={specs} />
       </div>
+
     </div>
   );
 }

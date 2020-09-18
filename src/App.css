@@ -52,3 +52,33 @@ span {
   grid-column: 2;
   grid-row: 2 / 3;
 }
+
+.modalbox {
+  height: 500px;
+  width: 500px;
+  padding: 25px;
+  position: relative;
+  border-radius: 2%;
+  background-color: white;
+}
+
+.modalbox h2 {
+  font-size: 1em;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.modalbox h3 {
+  font-size: 0.9em;
+  margin-right: 20px;
+  font-weight: 400;
+}
+
+.close-button {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+
+  font-size: 1.1em;
+  font-weight: bold;
+}
