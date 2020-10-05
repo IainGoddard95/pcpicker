@@ -2,6 +2,7 @@ import React from "react";
 import ItemList from "./ItemList";
 
 const Form = (props) => {
+  //List of components, array of objects
   const components = [
     {
       name: "case",
@@ -431,6 +432,7 @@ const Form = (props) => {
     },
   ];
 
+  //retrun a component for each item in the component list
   let listItems = components.map((x) => (
     <ItemList
       key={x.name}
@@ -445,7 +447,7 @@ const Form = (props) => {
   return (
   <div>
     {listItems}
-    <button onClick={() => props.resetObject(props.currentSelection)} >Reset Selection</button>
+    <button onClick={() => props.resetObject(props.currentSelection)} ><strong>RESET SELECTION</strong></button>
   </div>
 )};
 

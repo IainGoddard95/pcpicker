@@ -9,9 +9,9 @@ const ItemBreakdownTable = (props) => {
     ? Object.entries(props.item).map(([label, value]) => {
         alt = !alt;
         return label !== "url" ? (
-          <ItemDetailText alt={alt ? "alt" : ""} label={label} value={value} />
+          <ItemDetailText key={label} alt={alt ? "alt" : ""} label={label} value={value} />
         ) : (
-          <ItemDetailBuyLink url={value} />
+          <ItemDetailBuyLink key={label} url={value} />
         );
       })
     : null;

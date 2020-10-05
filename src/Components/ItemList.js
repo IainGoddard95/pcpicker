@@ -136,6 +136,7 @@ const ItemList = (props) => {
           disabled = true;
         }
         break;
+      default:
     }
   }
 
@@ -147,7 +148,6 @@ const ItemList = (props) => {
       item
     );
     if (props.currentSelection[props.name].name === item.name) {
-      console.log(props.currentSelection[props.name].name, item);
       selected = true;
     } else {
       selected = false;

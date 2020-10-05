@@ -6,7 +6,7 @@ const SpecsOverallTable = (props) => {
 
   const listSpecs = Object.entries(props.specs).map(([key, value]) => {
     alt = !alt;
-    return <ItemDetailText alt={alt ? "alt" : ""} label={key} value={value} />;
+    return <ItemDetailText alt={alt ? "alt" : ""} key={key} label={key} value={value} />;
   });
 
   return (

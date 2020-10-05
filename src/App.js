@@ -100,9 +100,7 @@ function App() {
   const [lastSelected, setLastSelected] = useState(null);
 
   useEffect(() => {
-    console.log("current Selection", selection);
-    console.log("specs", specs);
-    console.log("Last selected", selection[lastSelected]);
+      //console.log();
   });
 
   function specsHandler(operator, currentSelection, component) {
@@ -184,7 +182,7 @@ function FancyModalButton() {
   }
     return (
       <div>
-        <button onClick={toggleModal}>Click me</button>
+        <button className="git-btn" onClick={toggleModal}>Click me</button>
         <Modal
           isOpen={isOpen}
           onBackgroundClick={toggleModal}
@@ -192,9 +190,20 @@ function FancyModalButton() {
             <div className="modalbox">
               <h1>PC Picker</h1>
               <h2>React</h2>
-              <h2>Firebase</h2>
               <h3>Time to complete: 60 Hours</h3>
-              <p>Write something about the app. Write something about the app. Write something about the app. Write something about the app. Write something about the app.</p>
+              <p>
+                Users can build a PC by picking components in any order. When a component is selected, a breakdown of the components specs
+                is displayed on a table to the left. Below the breakdown table, we have a build specs table that gradually fills with each selected component.
+              </p>
+              <p>
+                Each time a component is selected, or unselected by clicking it again, the application checks which components are compatible
+                with the user's current build. By disabling any incompatible options, the user can only select a viable build. 
+              </p>
+              <p>
+                Currently, components are hardcoded in the backend of the application. Ideally, this would be transfered to an online storage
+                solution, like Firebase. Or, in a real-life scenario, supplied by a thrid-party API. That way, with a dynamic compatibility checker 
+                & method of displaying components, extra components can be added without any code maintenance.
+              </p>
               <span onClick={toggleModal} className="close-button">x</span>
             </div>
         </Modal>
