@@ -136,7 +136,6 @@ const ItemList = (props) => {
           disabled = true;
         }
         break;
-      default:
     }
   }
 
