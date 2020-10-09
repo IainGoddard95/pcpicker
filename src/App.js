@@ -1,5 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { ModalProvider } from 'styled-react-modal';
+import React, {
+  useState,
+  useEffect
+} from "react";
+import {
+  ModalProvider
+} from 'styled-react-modal';
 import Modal from 'styled-react-modal';
 import "./App.css";
 import Form from "./Components/Form";
@@ -15,7 +20,12 @@ import SpecsOverallTable from "./Components/SpecsOverallTable";
 
 function App() {
   const [selection, setSelection] = useState({
-    case: { name: null, formFactor: null, price: null, url: null },
+    case: {
+      name: null,
+      formFactor: null,
+      price: null,
+      url: null
+    },
     hardDrive: {
       name: null,
       brand: null,
@@ -100,11 +110,13 @@ function App() {
   const [lastSelected, setLastSelected] = useState(null);
 
   useEffect(() => {
-      //console.log();
+    //console.log();
   });
 
   function specsHandler(operator, currentSelection, component) {
-    const currentSpecs = { ...specs };
+    const currentSpecs = {
+      ...specs
+    };
 
     currentSpecs.formFactor =
       currentSelection.case.formFactor ||
@@ -135,19 +147,33 @@ function App() {
       currentSpecs.totalWattage -= component.wattage;
     }
 
-    setSpecs({ ...currentSpecs });
+    setSpecs({
+      ...currentSpecs
+    });
   }
 
   function resetSelection() {
-    let tempSelection = {...selection};
-    let tempSpecs = {...specs};
-    let tempLastSelected = {...lastSelected};
+    let tempSelection = {
+      ...selection
+    };
+    let tempSpecs = {
+      ...specs
+    };
+    let tempLastSelected = {
+      ...lastSelected
+    };
     Object.values(tempSelection).forEach((value) => resetObject(value));
     resetObject(tempSpecs);
     resetObject(tempLastSelected);
-    setSelection({...tempSelection});
-    setSpecs({...tempSpecs});
-    setLastSelected({...lastSelected});
+    setSelection({
+      ...tempSelection
+    });
+    setSpecs({
+      ...tempSpecs
+    });
+    setLastSelected({
+      ...lastSelected
+    });
   }
 
   function resetObject(obj) {
@@ -155,7 +181,9 @@ function App() {
   }
 
   function selectionHandler(componentType, component) {
-    const currentSelection = { ...selection };
+    const currentSelection = {
+      ...selection
+    };
 
     let operator = null;
 
@@ -169,74 +197,111 @@ function App() {
       operator = "plus";
     }
 
-    setSelection({ ...selection, ...currentSelection });
+    setSelection({
+      ...selection,
+      ...currentSelection
+    });
 
     specsHandler(operator, currentSelection, component);
   }
- 
-function FancyModalButton() {
-  const [isOpen, setIsOpen] = useState(false)
- 
-  function toggleModal(e) {
-    setIsOpen(!isOpen)
-  }
-    return (
-      <div>
-        <button className="git-btn" onClick={toggleModal}>Click me</button>
-        <Modal
-          isOpen={isOpen}
-          onBackgroundClick={toggleModal}
-          onEscapeKeydown={toggleModal}>
-            <div className="modalbox">
-              <h1>PC Picker</h1>
-              <h2>React</h2>
-              <h3>Time to complete: 60 Hours</h3>
-              <p>
-                Users can build a PC by picking components in any order. When a component is selected, a breakdown of the components specs
-                is displayed on a table to the left. Below the breakdown table, we have a build specs table that gradually fills with each selected component.
-              </p>
-              <p>
-                Each time a component is selected, or unselected by clicking it again, the application checks which components are compatible
-                with the user's current build. By disabling any incompatible options, the user can only select a viable build. 
-              </p>
-              <p>
-                Currently, components are hardcoded in the backend of the application. Ideally, this would be transfered to an online storage
-                solution, like Firebase. Or, in a real-life scenario, supplied by a thrid-party API. That way, with a dynamic compatibility checker 
-                & method of displaying components, extra components can be added without any code maintenance.
-              </p>
-              <span onClick={toggleModal} className="close-button">x</span>
-            </div>
-        </Modal>
-      </div>
+
+  function FancyModalButton() {
+    const [isOpen, setIsOpen] = useState(false)
+
+    function toggleModal(e) {
+      setIsOpen(!isOpen)
+    }
+    return ( <
+      div >
+      <
+      button className = "git-btn"
+      onClick = {
+        toggleModal
+      } > Click me < /button> <
+      Modal isOpen = {
+        isOpen
+      }
+      onBackgroundClick = {
+        toggleModal
+      }
+      onEscapeKeydown = {
+        toggleModal
+      } >
+      <
+      div className = "modalbox" >
+      <
+      h1 > PC Picker < /h1> <
+      h2 > React < /h2> <
+      h3 > Time to complete: 60 Hours < /h3> <
+      p >
+      Users can build a PC by picking components in any order.When a component is selected, a breakdown of the components specs is displayed on a table to the left.Below the breakdown table, we have a build specs table that gradually fills with each selected component. <
+      /p> <
+      p >
+      Each time a component is selected, or unselected by clicking it again, the application checks which components are compatible with the user 's current build. By disabling any incompatible options, the user can only select a viable build.  < /
+      p > <
+      p >
+      Currently, components are hardcoded in the backend of the application.Ideally, this would be transfered to an online storage solution, like Firebase.Or, in a real - life scenario, supplied by a thrid - party API.That way, with a dynamic compatibility checker &
+      method of displaying components, extra components can be added without any code maintenance. <
+      /p> <
+      span onClick = {
+        toggleModal
+      }
+      className = "close-button" > x < /span> < /
+      div > <
+      /Modal> < /
+      div >
     )
-}
+  }
 
 
-  return (
-    <div className="App">
+  return ( <
+    div className = "App" >
 
-      <ModalProvider>
-        <FancyModalButton />
-      </ModalProvider>
+    <
+    ModalProvider >
+    <
+    FancyModalButton / >
+    <
+    /ModalProvider>
 
-      <div className="Form">
-        <Form
-          selectionHandler={selectionHandler.bind(this)}
-          currentSpecs={specs}
-          currentSelection={selection}
-          resetObject={resetSelection}
-        />
-      </div>
+    <
+    div className = "Form" >
+    <
+    Form selectionHandler = {
+      selectionHandler.bind(this)
+    }
+    currentSpecs = {
+      specs
+    }
+    currentSelection = {
+      selection
+    }
+    resetObject = {
+      resetSelection
+    }
+    /> < /
+    div >
 
-      <div className="BreakdownTable">
-        <ItemBreakdownTable item={selection[lastSelected]} />
-      </div>
+    <
+    div className = "BreakdownTable" >
+    <
+    ItemBreakdownTable item = {
+      selection[lastSelected]
+    }
+    /> < /
+    div >
 
-      <div className="SpecsOverallTable">
-        <SpecsOverallTable specs={specs} />
-      </div>
+    <
+    div className = "SpecsOverallTable" >
+    <
+    SpecsOverallTable specs = {
+      specs
+    }
+    /> < /
+    div >
 
-    </div>
+    <
+    /div>
   );
 }
 
