@@ -10,6 +10,7 @@ import "./App.css";
 import Form from "./Components/Form";
 import ItemBreakdownTable from "./Components/ItemBreakdownTable";
 import SpecsOverallTable from "./Components/SpecsOverallTable";
+import github from "./images/github.jpg";
 
 function App() {
   const [selection, setSelection] = useState({
@@ -239,9 +240,10 @@ function App() {
       span onClick = {
         toggleModal
       }
-      className = "close-button" > x < /span> < /
-      div >
-      <img src="images/github.jpg" alt="github-icon"/>
+      className = "close-button" > x < /span> 
+      <a href="https://github.com/IainGoddard95/pcpicker" target="_blank"><img src={github} alt="github-icon"/></a>
+      < /div >
+      
       <
       /Modal> < /
       div >
