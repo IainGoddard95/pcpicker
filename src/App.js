@@ -210,7 +210,7 @@ function App() {
       button className = "git-btn"
       onClick = {
         toggleModal
-      } > Click me < /button> <
+      } > App Info < /button> <
       Modal isOpen = {
         isOpen
       }
@@ -240,7 +240,9 @@ function App() {
         toggleModal
       }
       className = "close-button" > x < /span> < /
-      div > <
+      div >
+      <img src="images/github.jpg" alt="github-icon"/>
+      <
       /Modal> < /
       div >
     )
