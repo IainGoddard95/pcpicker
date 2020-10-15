@@ -11,13 +11,6 @@ import Form from "./Components/Form";
 import ItemBreakdownTable from "./Components/ItemBreakdownTable";
 import SpecsOverallTable from "./Components/SpecsOverallTable";
 
-///////////////////////////////////////////////////////////////////
-///
-///   2) Add info button
-///        Quick bio of app. Time to dev, tech used etc.
-///   3) Move items to Firebase solution
-///////////////////////////////////////////////////////////////////
-
 function App() {
   const [selection, setSelection] = useState({
     case: {
