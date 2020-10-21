@@ -10,7 +10,7 @@ import "./App.css";
 import Form from "./Components/Form";
 import ItemBreakdownTable from "./Components/ItemBreakdownTable";
 import SpecsOverallTable from "./Components/SpecsOverallTable";
-import github from "./images/github.jpg";
+import github from "./images/github.png";
 
 function App() {
   const [selection, setSelection] = useState({
